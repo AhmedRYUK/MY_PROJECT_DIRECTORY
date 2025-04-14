@@ -13,8 +13,21 @@ class Startup
     #[ORM\Column]
     private ?int $id = null;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
+    #[ORM\ManyToOne(inversedBy: 'startups')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?User $user = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $nom_entreprise = null;
+
+    #[ORM\Column(length: 14)]
+    private ?string $siret = null;
+
+    #[ORM\Column(length: 100)]
+    private ?string $secteur = null;
+
+    #[ORM\Column(type: "text")]
+    private ?string $description = null;
+
+    // Getters et Setters...
 }
