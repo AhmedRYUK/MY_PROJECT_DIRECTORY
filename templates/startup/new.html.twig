@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Startup{% endblock %}
+
+{% block body %}
+    <h1>Create new Startup</h1>
+
+    {{ include('startup/_form.html.twig') }}
+
+    <a href="{{ path('app_startup_index') }}">back to list</a>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Startup{% endblock %}
+
+{% block body %}
+    <h1>Startup</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ startup.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom_entreprise</th>
+                <td>{{ startup.nomEntreprise }}</td>
+            </tr>
+            <tr>
+                <th>Siret</th>
+                <td>{{ startup.siret }}</td>
+            </tr>
+            <tr>
+                <th>Secteur</th>
+                <td>{{ startup.secteur }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ startup.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_startup_index') }}">back to list</a>
+
+    <a href="{{ path('app_startup_edit', {'id': startup.id}) }}">edit</a>
+
+    {{ include('startup/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Startup index{% endblock %}
+
+{% block body %}
+    <h1>Startup index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom_entreprise</th>
+                <th>Siret</th>
+                <th>Secteur</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for startup in startups %}
+            <tr>
+                <td>{{ startup.id }}</td>
+                <td>{{ startup.nomEntreprise }}</td>
+                <td>{{ startup.siret }}</td>
+                <td>{{ startup.secteur }}</td>
+                <td>{{ startup.description }}</td>
+                <td>
+                    <a href="{{ path('app_startup_show', {'id': startup.id}) }}">show</a>
+                    <a href="{{ path('app_startup_edit', {'id': startup.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_startup_new') }}">Create new</a>
+{% endblock %}
