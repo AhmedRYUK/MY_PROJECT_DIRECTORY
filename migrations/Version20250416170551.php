@@ -21,7 +21,7 @@ final class Version20250416170551 extends AbstractMigration
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->addSql(<<<'SQL'
-            ALTER TABLE "user" ADD is_verified BOOLEAN NOT NULL
+            ALTER TABLE "user" ADD is_verified BOOLEAN NOT NULL  
         SQL);
     }
 

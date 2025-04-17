@@ -50,7 +50,7 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
         }
 
         // Si aucune page cible n'a été enregistrée, redirige vers la page d'accueil ou une autre page
-        return new RedirectResponse($this->urlGenerator->generate('app_home')); // Remplace 'app_home' par ta route d'accueil
+        return new RedirectResponse($this->urlGenerator->generate('home')); // Remplace 'app_home' par ta route d'accueil
     }
 
     protected function getLoginUrl(Request $request): string
